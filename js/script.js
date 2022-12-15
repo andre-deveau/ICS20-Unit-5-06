@@ -1,23 +1,31 @@
 // Copyright (c) 2022 Andre Deveau All rights reserved
 //
 // Created by: Andre Deveau
-// Created on: Oct 2022
+// Created on: Dec 2022
 // This file contains the JS functions for index.html
 
 "use strict"
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Template/sw.js", {
-    scope: "/ICS2O-PWA-Template/",
+  navigator.serviceWorker.register("/ICS2O-Unit-5-06/sw.js", {
+    scope: "/ICS2O-Unit-5-06/",
   })
 }
 
-/**
- * This function displays an alert.
- */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  let text = ""
+  let counter = 0
+  const integerA = parseInt(document.getElementById("integer-A").value)
+  var integerB = parseInt(document.getElementById("integer-B").value)
+  const integerBOV = parseInt(document.getElementById("integer-B").value)
+
+  while (counter < integerA) {
+    text = text + "<br />Your number is: " + integerB
+    counter++
+    integerB = integerB + integerBOV
+  }
+  document.getElementById("answer").innerHTML = text
 }
